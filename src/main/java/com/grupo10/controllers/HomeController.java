@@ -14,6 +14,7 @@ import com.grupo10.helpers.ViewRouteHelper;
 @RequestMapping("/home")
 public class HomeController {
 	
+	
 	@GetMapping("kpo")
 	public String index() {
 		String modelAndView = "home/index";

@@ -21,19 +21,19 @@ public class ProductoEntity {
 	@Column(name = "Nombre", nullable = false)
 	private String nombre;
 	
-	@Column(name = "Nombre", nullable = false)
+	@Column(name = "Bebida", nullable = false)
 	private boolean bebida;
 	
-	@Column(name = "Nombre", nullable = false)
+	@Column(name = "Vegano", nullable = false)
 	private boolean vegano;
 	
-	@Column(name = "Nombre", nullable = false)
+	@Column(name = "Calorias", nullable = false)
 	private int calorias;
 	
-	@Column(name = "Nombre", nullable = false)
+	@Column(name = "Descripcion", nullable = false)
 	private String descripcion;
 	
-	@Column(name = "Nombre", nullable = false)
+	@Column(name = "Precio", nullable = false)
 	private float precio;
 
 	@Override
