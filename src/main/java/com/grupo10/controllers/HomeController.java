@@ -15,10 +15,15 @@ import com.grupo10.helpers.ViewRouteHelper;
 public class HomeController {
 	
 	
-	@GetMapping("kpo")
+	@GetMapping("")
 	public String index() {
-		String modelAndView = "home/index";
+		String modelAndView = ViewRouteHelper.HOME;
 	return modelAndView;
 	}
-		
+	
+	@GetMapping("articulos")
+	public ModelAndView articulos() {
+		ModelAndView kpo = new ModelAndView(ViewRouteHelper.ARTICULOS);
+		return kpo;
+	}
 }
