@@ -12,7 +12,7 @@ import com.grupo10.models.ProductoModel;
 public class ProductoConverter {
 
 	public ProductoModel entityToModel(ProductoEntity producto) {
-		return new ProductoModel(producto.getIdProducto(), producto.getNombre(), producto.isBebida(),
+		return new ProductoModel(producto.getId_Producto(), producto.getNombre(), producto.isBebida(),
 				producto.isVegano(), producto.getCalorias(), producto.getDescripcion(), producto.getPrecio());
 	}
 
