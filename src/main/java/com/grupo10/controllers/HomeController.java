@@ -23,9 +23,9 @@ public class HomeController {
 	
 	
 	@GetMapping("")
-	public String index() {
-		String modelAndView = ViewRouteHelper.HOME;
-	return modelAndView;
+	public ModelAndView index() {
+		ModelAndView mAV = new ModelAndView(ViewRouteHelper.HOME);
+	return mAV;
 	}
 	
 	@GetMapping("articulos")
