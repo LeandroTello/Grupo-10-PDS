@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "producto")
-public abstract class ProductoEntity {
+public class ProductoEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,6 +52,9 @@ public abstract class ProductoEntity {
 		this.calorias = calorias;
 		this.descripcion = descripcion;
 		this.precio = precio;
+	}
+	
+	public ProductoEntity() {
 	}
 
 	public int getIdProducto() {

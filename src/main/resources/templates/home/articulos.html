@@ -9,5 +9,30 @@
 <a href="http://localhost:8080/home">  
        <button>Click Me</button>  
      </a>
+     <h3 class="text-center font-weight-light my-4">Lista de usuarios activos</h3>
+						<div class="card-body">
+							<table class="center">
+								<thead>
+									<tr>
+										<th style="text-align:center">Nombre</th>
+										<th style="text-align:center">bebida</th>
+										<th style="text-align:center">vegano</th>
+										<th style="text-align:center">calorias</th>
+										<th style="text-align:center">descripcion</th>
+										<th style="text-align:center">precio</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="producto : ${productos}">
+										<td style="text-align:center"><span th:text="${producto.nombre}"></span></td>
+										<td style="text-align:center"><span th:text="${producto.bebida}"></span></td>
+										<td style="text-align:center"><span th:text="${producto.vegano}"></span></td>
+										<td style="text-align:center"><span th:text="${producto.calorias}"></span></td>
+										<td style="text-align:center"><span th:text="${producto.descripcion}"></span></td>
+										<td style="text-align:center"><span th:text="${producto.precio}"></span></td>
+									</tr>
+								</tbody>
+							</table>
+							</div>
 </body>
 </html>
