@@ -28,6 +28,8 @@ public class HomeController {
 	public ModelAndView articulos() {
 		ModelAndView mAV = new ModelAndView(ViewRouteHelper.ARTICULOS);
 		mAV.addObject("productos",productoService.traerProductos());
+		String test = "@{/static/assets/img/1.png}";
+		mAV.addObject(test);
 		return mAV;
 	}
 }
