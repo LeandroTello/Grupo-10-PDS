@@ -3,18 +3,14 @@ package com.grupo10.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.grupo10.helpers.ViewRouteHelper;
 import com.grupo10.services.implementation.IProductoService;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping("")
 public class HomeController {
 	
 	@Autowired

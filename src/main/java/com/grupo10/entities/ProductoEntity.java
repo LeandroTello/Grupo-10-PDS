@@ -16,7 +16,7 @@ public class ProductoEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_Producto;
+	private int id_producto;
 	
 	@Column(name = "Nombre", nullable = false)
 	private String nombre;
@@ -38,14 +38,14 @@ public class ProductoEntity {
 
 	@Override
 	public String toString() {
-		return "ProductoEntity [idProducto=" + id_Producto + ", nombre=" + nombre + ", bebida=" + bebida + ", vegano="
+		return "ProductoEntity [idProducto=" + id_producto + ", nombre=" + nombre + ", bebida=" + bebida + ", vegano="
 				+ vegano + ", calorias=" + calorias + ", descripcion=" + descripcion + ", precio=" + precio + "]";
 	}
 
-	public ProductoEntity(int id_Producto, String nombre, boolean bebida, boolean vegano, int calorias,
+	public ProductoEntity(int id_producto, String nombre, boolean bebida, boolean vegano, int calorias,
 			String descripcion, float precio) {
 		super();
-		this.id_Producto = id_Producto;
+		this.id_producto = id_producto;
 		this.nombre = nombre;
 		this.bebida = bebida;
 		this.vegano = vegano;
@@ -58,11 +58,11 @@ public class ProductoEntity {
 	}
 
 	public int getId_Producto() {
-		return id_Producto;
+		return id_producto;
 	}
 
 	public void setId_Producto(int idProducto) {
-		this.id_Producto = idProducto;
+		this.id_producto = idProducto;
 	}
 
 	public String getNombre() {
