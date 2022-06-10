@@ -23,6 +23,9 @@ public class ProvinciaEntity {
 		this.id_provincia = id_provincia;
 		this.nombre = nombre;
 	}
+	
+	public ProvinciaEntity() {
+	}
 
 	public int getId_provincia() {
 		return id_provincia;

@@ -13,22 +13,19 @@ import com.grupo10.models.ProductoModel;
 import com.grupo10.repositories.IProductoRepository;
 import com.grupo10.services.implementation.IProductoService;
 
-
 @Service("productoService")
-public class ProductoService implements IProductoService{
-	
+public class ProductoService implements IProductoService {
+
 	@Autowired
 	@Qualifier("productoRepository")
 	private IProductoRepository productoRepository;
-	
+
 	@Autowired
 	@Qualifier("productoConverter")
 	private ProductoConverter productoConverter;
 	
-	
 	public List<ProductoModel> traerProductos() {
 		List<ProductoModel> productos = new ArrayList<ProductoModel>();
-		List<ProductoEntity> productosfddfs = productoRepository.findAll();
 		for (ProductoEntity producto : productoRepository.findAll()) {
 			productos.add(productoConverter.entityToModel(producto));
 		}
