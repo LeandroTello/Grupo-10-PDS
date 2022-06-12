@@ -46,4 +46,10 @@ public class HomeController {
 		mAV.addObject("sucursales",sucursalService.traerSucursales());
 		return mAV;
 	}
+	@GetMapping("cupon")
+	public ModelAndView cupon() {
+		ModelAndView mAV = new ModelAndView(ViewRouteHelper.CUPON);
+		mAV.addObject("sucursales",sucursalService.traerSucursales());
+		return mAV;
+	}
 }

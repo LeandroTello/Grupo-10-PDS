@@ -7,6 +7,15 @@ public class SucursalModel {
 	private LocalidadModel localidad;
 	private double latitud;
 	private double longitud;
+	private String descuento;
+
+	public String getDescuento() {
+		return descuento;
+	}
+
+	public void setDescuento(String descuento) {
+		this.descuento = descuento;
+	}
 
 	public int getId_sucursal() {
 		return id_sucursal;
@@ -57,8 +66,10 @@ public class SucursalModel {
 		this.longitud = longitud;
 	}
 
+	
+
 	public SucursalModel(int id_sucursal, String direccion, ProvinciaModel provincia, LocalidadModel localidad,
-			double latitud, double longitud) {
+			double latitud, double longitud, String descuento) {
 		super();
 		this.id_sucursal = id_sucursal;
 		this.direccion = direccion;
@@ -66,6 +77,7 @@ public class SucursalModel {
 		this.localidad = localidad;
 		this.latitud = latitud;
 		this.longitud = longitud;
+		this.descuento = descuento;
 	}
 
 	public SucursalModel() {

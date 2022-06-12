@@ -22,6 +22,6 @@ public class SucursalConverter {
 		return new SucursalModel(sucursal.getId_sucursal(), sucursal.getDireccion(),
 				provinciaConverter.entityToModel(sucursal.getProvincia()),
 				localidadConverter.entityToModel(sucursal.getLocalidad()), sucursal.getLatitud(),
-				sucursal.getLongitud());
+				sucursal.getLongitud(), sucursal.getDescuento());
 	}
 }

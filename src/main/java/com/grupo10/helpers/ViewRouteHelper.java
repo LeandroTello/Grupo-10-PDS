@@ -5,4 +5,5 @@ public class ViewRouteHelper {
 	public final static String HOME = "home/index";
 	public final static String ARTICULOS = "home/articulo";
 	public final static String SUCURSAL = "home/sucursal";
+	public final static String CUPON = "home/cupon";
 }

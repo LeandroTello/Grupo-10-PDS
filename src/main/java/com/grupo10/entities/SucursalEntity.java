@@ -34,12 +34,15 @@ public class SucursalEntity {
 
 	@Column(name = "longitud", nullable = false)
 	private double longitud;
+	
+	@Column(name = "descuento", nullable = false)
+	private String descuento;
 
 	public SucursalEntity() {
 	}
 
 	public SucursalEntity(int id_sucursal, String direccion, ProvinciaEntity provincia, LocalidadEntity localidad,
-			double latitud, double longitud) {
+			double latitud, double longitud, String descuento) {
 		super();
 		this.id_sucursal = id_sucursal;
 		this.direccion = direccion;
@@ -47,6 +50,15 @@ public class SucursalEntity {
 		this.localidad = localidad;
 		this.latitud = latitud;
 		this.longitud = longitud;
+		this.descuento = descuento;
+	}
+
+	public String getDescuento() {
+		return descuento;
+	}
+
+	public void setDescuento(String descuento) {
+		this.descuento = descuento;
 	}
 
 	public int getId_sucursal() {

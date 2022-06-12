@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
+<meta charset="ISO-8859-1" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
@@ -20,6 +21,7 @@
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="css/styles.css" rel="stylesheet" />
+
 </head>
 <body id="page-top">
 	<!-- Navigation-->
@@ -49,8 +51,8 @@
 	<!-- Masthead-->
 	<header class="masthead">
 		<div class="container">
-			<div class="masthead-heading text-uppercase">Articulos
-				disponibles</div>
+			<div class="masthead-subheading">Nuestras Promociones
+				especiales!</div>
 		</div>
 	</header>
 
@@ -58,28 +60,28 @@
 	<section class="page-section bg-light" id="portfolio">
 		<div class="container">
 			<div class="text-center">
-				<h2 class="section-heading text-uppercase">Articulos</h2>
+				<h2 class="section-heading text-uppercase">Promociones activas</h2>
 			</div>
 			<div class="row">
-				<th:block th:each="producto : ${productos}">
+				<th:block th:each="sucursal : ${sucursales}">
 					<div class="col-lg-4 col-sm-6 mb-4">
 						<!-- Portfolio item 1-->
 						<div class="portfolio-item">
 							<a class="portfolio-link" data-bs-toggle="modal"
-								th:href="@{${'#portfolioModal'+ producto.idProducto}}">
+								th:href="@{${'#portfolioModal'+ sucursal.id_sucursal}}">
 								<div class="portfolio-hover">
 									<div class="portfolio-hover-content">
 										<i class="fas fa-plus fa-3x"></i>
 									</div>
 								</div> <img class="img-fluid"
-								th:src="@{${'/assets/img/portfolio/'+ producto.idProducto +'.png'}}"
+								th:src="@{${'/assets/img/portfolio/'+'promo'+ sucursal.id_sucursal +'.png'}}"
 								alt="..." />
 							</a>
 							<div class="portfolio-caption">
-								<span th:text="${producto.nombre}"> </span>
+								<span> Clickea aca para conseguir tu descuento </span>
 							</div>
-							<div class="portfolio-caption-subheading text-muted">* foto
-								solo de ilustracion</div>
+							<div class="portfolio-caption-subheading text-muted">solo
+								valido para el dia de hoy</div>
 						</div>
 					</div>
 			</div>
@@ -190,28 +192,32 @@
 	</footer>
 	<!-- Portfolio Modals-->
 	<!-- Portfolio item 1 modal popup-->
-	<th:block th:each="producto : ${productos}">
+	<th:block th:each="sucursal : ${sucursales}">
 		<div class="portfolio-modal modal fade"
-			th:id="@{${'portfolioModal'+ producto.idProducto}}" tabindex="-1"
+			th:id="@{${'portfolioModal'+ sucursal.id_sucursal}}" tabindex="-1"
 			role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="close-modal" data-bs-dismiss="modal">
 						<img src="assets/img/close-icon.svg" alt="Close modal" />
 					</div>
-					<div class="container ">
+					<div class="container">
 						<div class="row justify-content-center">
+							<img class="img-fluid"
+								th:src="@{${'/assets/img/portfolio/'+'promo'+ sucursal.id_sucursal +'.png'}}"
+								alt="..." style="width: 700px; height: 700px" />
 							<div class="col-lg-8">
 								<div class="modal-body">
 									<!-- Project details-->
-									<span th:text="${producto.nombre}"> </span> <img
-										class="img-fluid d-block mx-auto"
-										th:src="@{${'/assets/img/portfolio/'+ producto.idProducto +'.png'}}"
-										alt="..." />
-									<ul class="list-inline">
-										<li><strong>Client:</strong> Threads</li>
-										<li><strong>Category:</strong> Illustration</li>
-									</ul>
+									<img class="img-fluid"
+										th:src="@{${'/assets/img/portfolio/'+'frame'+
+									sucursal.id_sucursal +'.png'}}"
+										alt="..." /> <br> <span th:text="${sucursal.descuento}">
+									</span> <br>
+									<button class="btn btn-primary btn-xl text-uppercase"
+										data-bs-dismiss="modal" type="button">
+										<i class="fas fa-xmark me-1"></i> cerrar promocion
+									</button>
 								</div>
 							</div>
 						</div>
