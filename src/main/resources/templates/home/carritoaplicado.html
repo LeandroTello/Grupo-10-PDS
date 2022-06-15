@@ -1,8 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+table.purpleHorizon {
+	background-color: #B9B9B9;
+	width: 80%;
+	height: 80%;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+table.purpleHorizon td, table.purpleHorizon th {
+	border: 0px solid #F5F757;
+	padding: 6px 0px;
+}
+
+table.purpleHorizon tbody td {
+	font-size: 16px;
+	font-weight: bold;
+	color: #000000;
+}
+
+table.purpleHorizon tr:nth-child(even) {
+	background: #E5E5E5;
+}
+
+table.purpleHorizon thead {
+	background: #FFFFFF;
+	border-bottom: 0px solid #792396;
+}
+
+table.purpleHorizon thead th {
+	font-size: 20px;
+	font-weight: bold;
+	color: #020202;
+	text-align: center;
+	border-left: 0px solid #792396;
+}
+
+table.purpleHorizon thead th:first-child {
+	border-left: none;
+}
+
+table.purpleHorizon tfoot td {
+	font-size: 13px;
+}
+
+table.purpleHorizon tfoot .links {
+	text-align: right;
+}
+
+table.purpleHorizon tfoot .links a {
+	display: inline-block;
+	background: #792396;
+	color: #FFFFFF;
+	padding: 2px 8px;
+	border-radius: 5px;
+}
+</style>
 <head>
 <meta charset="utf-8" />
-<meta charset="ISO-8859-1" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
@@ -21,7 +77,6 @@
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="css/styles.css" rel="stylesheet" />
-
 </head>
 <body id="page-top">
 	<!-- Navigation-->
@@ -30,7 +85,6 @@
 			<a class="navbar-brand" href="/"><img
 				src="assets/img/navbar-logo.png" style="width: 300px; height: 120px"
 				alt="..." /></a>
-			<!-- BOTON DEL HOME XD -->
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -49,40 +103,51 @@
 	<!-- Masthead-->
 	<header class="masthead">
 		<div class="container">
-			<div class="masthead-subheading">Nuestras sucursales!</div>
+			<div class="masthead-heading text-uppercase">Articulos
+				Seleccionados</div>
 		</div>
 	</header>
-
 	<!-- Portfolio Grid-->
 	<section class="page-section bg-light" id="portfolio">
 		<div class="container">
 			<div class="text-center">
-				<h2 class="section-heading text-uppercase">Sucursales activas</h2>
+				<h2 class="section-heading text-uppercase">Articulos</h2>
 			</div>
-			<div class="row">
-				<th:block th:each="sucursal : ${sucursales}">
-					<div class="col-lg-4 col-sm-6 mb-4">
-						<!-- Portfolio item 1-->
-						<div class="portfolio-item">
-							<a class="portfolio-link" data-bs-toggle="modal"
-								th:href="@{${'#portfolioModal'+ sucursal.id_sucursal}}">
-								<div class="portfolio-hover">
-									<div class="portfolio-hover-content">
-										<i class="fas fa-plus fa-3x"></i>
-									</div>
-								</div> <img class="img-fluid"
-								th:src="@{${'/assets/img/portfolio/'+'map'+ sucursal.id_sucursal +'.png'}}"
-								alt="..." />
-							</a>
-							<div class="portfolio-caption">
-								<span th:text="${sucursal.direccion}"> </span>
-							</div>
-							<div class="portfolio-caption-subheading text-muted">Illustration</div>
-						</div>
-					</div>
-			</div>
-			</th:block>
 		</div>
+		<div class="container" align="center">
+			<table class="purpleHorizon">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>cantidad</th>
+						<th></th>
+						<th>Precio c/u</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Mcnifica</td>
+						<td>2</td>
+						<td><img class="img-fluid" src="assets/img/portfolio/1.png" alt="..." width="200" height="200"></td>
+						<td>225$</td>
+					</tr>
+					<tr>
+						<td>triple con queso</td>
+						<td>1</td>
+						<td><img class="img-fluid" src="assets/img/portfolio/2.png" alt="..." width="200" height="200"></td>
+						<td>650$</td>
+					</tr>
+					<tr>
+						<td>Mcnuggets</td>
+						<td>1</td>
+						<td><img class="img-fluid" src="assets/img/portfolio/3.png" alt="..." width="200" height="200"></td>
+						<td>550$</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<a class="nav-link" href="/carritopago"> <button class="btn btn-primary btn-xl text-uppercase disabled"
+						type=button onclick=>Continuar con la compra</button></a>
 		</div>
 	</section>
 
@@ -186,29 +251,29 @@
 	</footer>
 	<!-- Portfolio Modals-->
 	<!-- Portfolio item 1 modal popup-->
-	<th:block th:each="sucursal : ${sucursales}">
+	<th:block th:each="producto : ${productos}">
 		<div class="portfolio-modal modal fade"
-			th:id="@{${'portfolioModal'+ sucursal.id_sucursal}}" tabindex="-1"
+			th:id="@{${'portfolioModal'+ producto.idProducto}}" tabindex="-1"
 			role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="close-modal" data-bs-dismiss="modal">
 						<img src="assets/img/close-icon.svg" alt="Close modal" />
 					</div>
-					<div class="container">
+					<div class="container ">
 						<div class="row justify-content-center">
-							<img class="img-fluid"
-								th:src="@{${'/assets/img/portfolio/'+'map'+ sucursal.id_sucursal +'.png'}}"
-								alt="..." style="width: 600px; height: 600px" />
 							<div class="col-lg-8">
 								<div class="modal-body">
 									<!-- Project details-->
-									<span th:text="${sucursal.direccion}"> </span>
-									<br>
-									<button class="btn btn-primary btn-xl text-uppercase"
-										data-bs-dismiss="modal" type="button">
-										<i class="fas fa-xmark me-1"></i> cerrar
-									</button>
+									<span th:text="${producto.nombre}"> </span> <img
+										class="img-fluid d-block mx-auto"
+										th:src="@{${'/assets/img/portfolio/'+ producto.idProducto +'.png'}}"
+										alt="..." /> Cantidad <input type="number" id="Cantidad"
+										name="tentacles" min="1" max="10">
+									<ul class="list-inline">
+									</ul>
+									<button onclick="alert('se agrego el articulo al carrito');">Agregar
+										al carrito</button>
 								</div>
 							</div>
 						</div>

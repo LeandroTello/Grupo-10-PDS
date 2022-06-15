@@ -1,5 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+table.purpleHorizon {
+	background-color: #B9B9B9;
+	width: 40%;
+	height: 40%;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+table.purpleHorizon td, table.purpleHorizon th {
+	border: 0px solid #F5F757;
+	padding: 6px 0px;
+}
+
+table.purpleHorizon tbody td {
+	font-size: 16px;
+	font-weight: bold;
+	color: #000000;
+}
+
+table.purpleHorizon tr:nth-child(even) {
+	background: #E5E5E5;
+}
+
+table.purpleHorizon thead {
+	background: #FFFFFF;
+	border-bottom: 0px solid #792396;
+}
+
+table.purpleHorizon thead th {
+	font-size: 20px;
+	font-weight: bold;
+	color: #020202;
+	text-align: center;
+	border-left: 0px solid #792396;
+}
+
+table.purpleHorizon thead th:first-child {
+	border-left: none;
+}
+
+table.purpleHorizon tfoot td {
+	font-size: 13px;
+}
+
+table.purpleHorizon tfoot .links {
+	text-align: right;
+}
+
+table.purpleHorizon tfoot .links a {
+	display: inline-block;
+	background: #792396;
+	color: #FFFFFF;
+	padding: 2px 8px;
+	border-radius: 5px;
+}
+</style>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -28,7 +85,6 @@
 			<a class="navbar-brand" href="/"><img
 				src="assets/img/navbar-logo.png" style="width: 300px; height: 120px"
 				alt="..." /></a>
-			<!-- BOTON DEL HOME XD -->
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -40,8 +96,6 @@
 					<li class="nav-item"><a class="nav-link" href="/articulos">articulos</a></li>
 					<li class="nav-item"><a class="nav-link" href="/sucursal">sucursales</a></li>
 					<li class="nav-item"><a class="nav-link" href="/cupon">cupones</a></li>
-					<li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-					<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -53,12 +107,17 @@
 				disponibles</div>
 		</div>
 	</header>
-
 	<!-- Portfolio Grid-->
 	<section class="page-section bg-light" id="portfolio">
 		<div class="container">
 			<div class="text-center">
 				<h2 class="section-heading text-uppercase">Articulos</h2>
+				<br>
+				<div>
+					<a href="/carrito"><img class="img-fluid"
+						th:src="@{${'/assets/img/portfolio/carrito.png'}}" alt="..." />hace
+						click para ver tus productos seleccionados</a>
+				</div>
 			</div>
 			<div class="row">
 				<th:block th:each="producto : ${productos}">
@@ -173,12 +232,12 @@
 			<div class="row align-items-center">
 				<div class="col-lg-4 text-lg-start">Copyright &copy; Mcdonalds</div>
 				<div class="col-lg-4 my-3 my-lg-0">
-					<a class="btn btn-dark btn-social mx-2" href="#!"
-						aria-label="Twitter"><i class="fab fa-twitter"></i></a> <a
-						class="btn btn-dark btn-social mx-2" href="#!"
-						aria-label="Facebook"><i class="fab fa-facebook-f"></i></a> <a
-						class="btn btn-dark btn-social mx-2" href="#!"
-						aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+					<a class="btn btn-dark btn-social mx-2"
+						href="https://twitter.com/McDonalds_Ar" aria-label="Twitter"><i
+						class="fab fa-twitter"></i></a> <a
+						class="btn btn-dark btn-social mx-2"
+						href="https://www.facebook.com/McDonaldsArgentina"
+						aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
 				</div>
 				<div class="col-lg-4 text-lg-end">
 					<a class="link-dark text-decoration-none me-3" href="#!">Privacy
@@ -208,10 +267,32 @@
 										class="img-fluid d-block mx-auto"
 										th:src="@{${'/assets/img/portfolio/'+ producto.idProducto +'.png'}}"
 										alt="..." />
+									<div class="tablakpo" align="center">
+									<table class="purpleHorizon">
+										<thead>
+											<tr>
+												<th></th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Precio</td>
+												<td><span th:text="${producto.precio}"> </span></td>
+											</tr>
+											<tr>
+												<td>Calorias</td>
+												<td><span th:text="${producto.calorias}"> </span></td>
+											</tr>
+										</tbody>
+									</table>
+									<br> Cantidad <input type="number" id="Cantidad"
+										name="tentacles" min="1" max="10">
 									<ul class="list-inline">
-										<li><strong>Client:</strong> Threads</li>
-										<li><strong>Category:</strong> Illustration</li>
 									</ul>
+									<button onclick="alert('se agrego el articulo al carrito');">Agregar
+										al carrito</button>
+										</div>
 								</div>
 							</div>
 						</div>

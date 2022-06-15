@@ -52,4 +52,28 @@ public class HomeController {
 		mAV.addObject("sucursales",sucursalService.traerSucursales());
 		return mAV;
 	}
+	@GetMapping("carrito")
+	public ModelAndView carrito() {
+		ModelAndView mAV = new ModelAndView(ViewRouteHelper.CARRITO);
+		mAV.addObject("sucursales",sucursalService.traerSucursales());
+		return mAV;
+	}
+	@GetMapping("carritoa")
+	public ModelAndView carritoa() {
+		ModelAndView mAV = new ModelAndView(ViewRouteHelper.CARRITOa);
+		mAV.addObject("sucursales",sucursalService.traerSucursales());
+		return mAV;
+	}
+	@GetMapping("carritopago")
+	public ModelAndView carritopago() {
+		ModelAndView mAV = new ModelAndView(ViewRouteHelper.carritopago);
+		mAV.addObject("sucursales",sucursalService.traerSucursales());
+		return mAV;
+	}
+	@GetMapping("codigopedido")
+	public ModelAndView codigopedido() {
+		ModelAndView mAV = new ModelAndView(ViewRouteHelper.codigopedido);
+		mAV.addObject("sucursales",sucursalService.traerSucursales());
+		return mAV;
+	}
 }
